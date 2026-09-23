@@ -7,11 +7,7 @@
       <rect x="34" y="86" width="54" height="15" rx="7.5" fill="#E8EDF3"/>
       <rect x="98" y="30" width="16" height="84" rx="8" fill="#F5A623"/>
     </g>
-    <text x="360" y="300" fill="#FFFFFF" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    <text x="360" y="320" fill="#FFFFFF" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
           font-size="56" font-weight="600">Logjam for Jira</text>
-    <text x="360" y="352" fill="#9FB0C9" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-          font-size="23">See what's blocking your Jira project,</text>
-    <text x="360" y="384" fill="#9FB0C9" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-          font-size="23">and who to ask about it</text>
   </g>
 </svg>
