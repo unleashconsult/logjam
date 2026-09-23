@@ -33,6 +33,8 @@
 <h2>What is sent to third parties</h2>
 <p>Nothing. The app makes no outbound network calls. There is no analytics, no tracking, no advertising, and no AI or machine-learning service involved. The app's manifest declares no external egress, which means Atlassian's platform would block such a call even if one were attempted.</p>
 
+<p>That describes the app, which is the part that touches your Jira data. The Marketplace listing page is a separate thing: it is a web page hosted by Atlassian, and we may use ordinary page analytics there to see how many people visit it. That measures visits to a public web page. It has no access to your Jira site, your work items or your users, and it is not connected to the app in any way.</p>
+
 <h2>Logs</h2>
 <p>If a project is large enough that a query has to be cut short, the app writes a diagnostic line to Atlassian's Forge logs recording which query was truncated and how many items were read. Those logs stay within Atlassian's platform and follow Atlassian's retention.</p>
 
