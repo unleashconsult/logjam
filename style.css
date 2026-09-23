@@ -30,3 +30,8 @@ footer a { color: var(--muted); }
 nav.top { font-size: .875rem; margin-bottom: 2.5rem; }
 nav.top a { color: var(--muted); text-decoration: none; }
 nav.top a:hover { text-decoration: underline; }
+figure { margin: 1.5rem 0 2rem; }
+figure.wide { width: min(62rem, calc(100vw - 2.5rem)); margin-left: 50%; transform: translateX(-50%); }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
+figcaption { color: var(--muted); font-size: .85rem; line-height: 1.5; margin-top: .55rem; max-width: 44rem; }
+@media (max-width: 40rem) { figcaption { padding: 0 .15rem; } }

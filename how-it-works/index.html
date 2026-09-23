@@ -15,10 +15,20 @@
 
 <p class="summary">Logjam applies a small number of fixed rules to the work items in one Jira project. Nothing is configurable, nothing is stored, and every figure on the page can be traced back to a field in Jira. This page is the whole rulebook.</p>
 
+<figure class="wide">
+<a href="../img/report.png"><img src="../img/report.png" alt="The Logjam report on a Jira project page: a row of figures above a table headed Needs action now." loading="lazy"></a>
+<figcaption>The whole report, on a demo project. Every figure and every rule described below is visible somewhere in it.</figcaption>
+</figure>
+
 <h2>Whose data you are seeing</h2>
 <p>Every request runs as you, not as the app. Jira enforces your own permissions, so the report can only show work items you could already open yourself. Two people opening the same project page may therefore see different numbers, and that is correct.</p>
 
 <h2>The figures at the top</h2>
+
+<figure class="wide">
+<a href="../img/figures.png"><img src="../img/figures.png" alt="The header band reading 80% data freshness, 5 in progress, 1 not updated in the last 7 days." loading="lazy"></a>
+<figcaption>Five items in progress, four of them touched within the last seven days. That is where 80% comes from, and the item left over is the 1.</figcaption>
+</figure>
 
 <p><strong>In progress</strong> — how many work items in the project are in a status Jira classifies as <em>In Progress</em>. Not the status <em>name</em>, the category, so your own workflow names are respected.</p>
 
@@ -37,6 +47,11 @@
 <li><strong>Due soon</strong> — the due date falls within the next seven days</li>
 <li><strong>Silent</strong> — in progress, and untouched</li>
 </ul>
+
+<figure class="wide">
+<a href="../img/needs-action.png"><img src="../img/needs-action.png" alt="The Needs action now table with four rows, each showing a reason such as Overdue, silent 20 days." loading="lazy"></a>
+<figcaption>Four rows flagged, while the figure above reads one. Only CR-5 is in progress, so only CR-5 is counted there — the rules in this section are wider, which is why the two numbers disagree.</figcaption>
+</figure>
 
 <p><strong>Epics are excluded from the silence rules.</strong> Work on an epic's children does not update the epic, so an active epic looks abandoned. Flagging them would fill the list with noise.</p>
 
@@ -61,6 +76,11 @@
 <p><strong>Holding up</strong> lists the work waiting on the other end of those links, with its own due date where it has one. That is the point of the table: not that something is blocked, but what stops moving because of it.</p>
 
 <p><strong>Ordering.</strong> Blockers are ranked by the soonest deadline of the work waiting behind them — not by their own dates. A task with no due date of its own can be the most pressing thing on the board if it is holding up something due on Friday.</p>
+
+<figure class="wide">
+<a href="../img/unblock.png"><img src="../img/unblock.png" alt="The Unblock these table: four blockers, each with the work it is holding up and that work’s due date." loading="lazy"></a>
+<figcaption>CR-1 is listed first because the work behind it was due Sep 4. Its own dates play no part — the Holding up column is what sets the order.</figcaption>
+</figure>
 
 <p><strong>Only blocking links count.</strong> "Relates to" is ignored; in this context it is noise.</p>
 
