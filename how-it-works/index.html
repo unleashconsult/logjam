@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works — Logjam for Jira</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="top"><a href="../">Logjam for Jira</a></nav>
+
+<h1>How it works</h1>
+<p class="lede">What each number means, and the rule behind it</p>
+
+<p class="summary">Logjam applies a small number of fixed rules to the work items in one Jira project. Nothing is configurable, nothing is stored, and every figure on the page can be traced back to a field in Jira. This page is the whole rulebook.</p>
+
+<h2>Whose data you are seeing</h2>
+<p>Every request runs as you, not as the app. Jira enforces your own permissions, so the report can only show work items you could already open yourself. Two people opening the same project page may therefore see different numbers, and that is correct.</p>
+
+<h2>The figures at the top</h2>
+
+<p><strong>In progress</strong> — how many work items in the project are in a status Jira classifies as <em>In Progress</em>. Not the status <em>name</em>, the category, so your own workflow names are respected.</p>
+
+<p><strong>Data freshness</strong> — the share of those in-progress items whose <code>updated</code> timestamp changed within the last seven days. If the project has five items in progress and three were touched this week, it reads 60%.</p>
+
+<p><strong>Not updated in the last 7 days</strong> — the remainder of that same set.</p>
+
+<p><strong>This figure counts work in progress only.</strong> It is not the number of rows flagged below, and the two will often differ. Something sitting in a backlog column, untouched for a month, is not counted here and usually should not be: nobody touching the backlog is normal. The flagged list below has wider rules, so it can show more rows than this number suggests.</p>
+
+<h2>Needs action now</h2>
+
+<p>Three rules, and every one of them also requires the item to have been silent for at least seven days. Something that is overdue but was updated yesterday does not appear — somebody is clearly on it.</p>
+
+<ul>
+<li><strong>Overdue</strong> — the due date is in the past</li>
+<li><strong>Due soon</strong> — the due date falls within the next seven days</li>
+<li><strong>Silent</strong> — in progress, and untouched</li>
+</ul>
+
+<p><strong>Epics are excluded from the silence rules.</strong> Work on an epic's children does not update the epic, so an active epic looks abandoned. Flagging them would fill the list with noise.</p>
+
+<p><strong>Completed work is excluded</strong>, and so are untouched backlog items that carry no due date.</p>
+
+<h2>"Silent N days"</h2>
+
+<p>Days since the work item's <code>updated</code> timestamp last changed. Jira sets that field on any edit at all — a comment, a status transition, a changed field, an added label. So the figure measures <em>attention</em>, not progress. An item someone commented on yesterday reads as fresh even if no work happened.</p>
+
+<p>That is the intended reading. The report answers the question <em>what has nobody looked at</em>, which is the one worth asking before a status meeting.</p>
+
+<h2>Why seven days, and why you cannot change it</h2>
+
+<p>The threshold was once a dropdown offering 7, 14 and 30 days. It looked like a choice of reporting period. It was not — it was a tolerance dial. Moving it to 30 did not show a different stretch of time, it simply stopped calling things stuck.</p>
+
+<p>The report answers a present-tense question for a weekly cadence, so the answer is seven days and it is not adjustable. A number you can turn down until you like it is not a measurement.</p>
+
+<h2>Unblock these</h2>
+
+<p>Built from <strong>Jira issue links</strong>, not from statuses or text. An item appears here when another item is linked as being blocked by it.</p>
+
+<p><strong>Holding up</strong> lists the work waiting on the other end of those links, with its own due date where it has one. That is the point of the table: not that something is blocked, but what stops moving because of it.</p>
+
+<p><strong>Ordering.</strong> Blockers are ranked by the soonest deadline of the work waiting behind them — not by their own dates. A task with no due date of its own can be the most pressing thing on the board if it is holding up something due on Friday.</p>
+
+<p><strong>Only blocking links count.</strong> "Relates to" is ignored; in this context it is noise.</p>
+
+<p><strong>One limitation worth knowing.</strong> Jira lets administrators rename link types, and Logjam recognises a blocking link by finding the word "block" in its name. A link type renamed to something else — or translated into another language — will not be picked up. If your dependency table is empty and you know it should not be, that is the first thing to check.</p>
+
+<p>Where a team does not maintain issue links at all, the table is empty and says so, rather than leaving you to read an empty table as good news.</p>
+
+<h2>Limits</h2>
+
+<p>The app reads up to 5,000 work items per query. Beyond that it stops and records that the answer is incomplete rather than quietly showing a partial one.</p>
+
+<h2>What it reads, and what it keeps</h2>
+
+<p>Per work item: key, summary, status, assignee, due date, last-updated timestamp, and issue links. Nothing else is requested.</p>
+
+<p>Nothing is stored. The data is read when you open the page, used to render it, and discarded. See the <a href="../privacy/">privacy policy</a> for the full account.</p>
+
+<footer>
+Unleash Consult ApS · Fredericia, Denmark · <a href="https://unleashconsult.dk">unleashconsult.dk</a><br>
+<a href="../support/">Support</a> · <a href="../privacy/">Privacy policy</a>
+</footer>
+</div>
+</body>
+</html>
