@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Logjam for Jira</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="top"><a href="../">Logjam for Jira</a></nav>
+
+<h1>Privacy Policy</h1>
+<p class="lede">Logjam for Jira · Last updated 23 September 2026</p>
+
+<p>Logjam for Jira is published by Unleash Consult ApS, Denmark. This policy describes what the app does with data. It is short because the app does very little.</p>
+
+<p class="summary"><strong>In short:</strong> Logjam reads work items from the Jira project you are looking at and renders a summary on screen. It stores nothing, sends nothing anywhere, and has no access to anything outside Atlassian.</p>
+
+<h2>Where the app runs</h2>
+<p>Logjam is an Atlassian Forge app. It runs entirely on Atlassian's own infrastructure, inside your Atlassian site. Unleash Consult operates no servers, databases or other infrastructure in connection with this app.</p>
+
+<h2>What it reads</h2>
+<p>The app requests one permission: <code>read:jira-work</code> — read-only access to Jira work items. From the project page you open it reads: work item key, summary, status, assignee name and account id, due date, last-updated timestamp, and issue links.</p>
+<p>It has no write access. It cannot create, edit, transition, comment on or delete anything.</p>
+
+<h2>Whose permissions apply</h2>
+<p>Every request is made as the signed-in user, not as the app, so Jira enforces that user's own permissions. Logjam cannot show you anything you could not already see in Jira yourself.</p>
+
+<h2>What is stored</h2>
+<p>Nothing. The app has no database, no key-value store and no file storage. Data is read when you open the page, used to render what you see, and discarded when the request ends.</p>
+
+<h2>What is sent to third parties</h2>
+<p>Nothing. The app makes no outbound network calls. There is no analytics, no tracking, no advertising, and no AI or machine-learning service involved. The app's manifest declares no external egress, which means Atlassian's platform would block such a call even if one were attempted.</p>
+
+<h2>Logs</h2>
+<p>If a project is large enough that a query has to be cut short, the app writes a diagnostic line to Atlassian's Forge logs recording which query was truncated and how many items were read. Those logs stay within Atlassian's platform and follow Atlassian's retention.</p>
+
+<h2>Personal data</h2>
+<p>The app displays the names of people assigned to work items, because naming who to ask is the point of it. That information is read from Jira and shown on screen. It is not stored, copied or transmitted.</p>
+<p>No customer data ever reaches Unleash Consult, so we do not process, store or transfer it. Data handling for your Jira site is governed by your agreement with Atlassian.</p>
+
+<h2>Changes</h2>
+<p>Material changes will be published on this page with a new date.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:frans@unleashconsult.dk">frans@unleashconsult.dk</a></p>
+
+<footer>
+Unleash Consult ApS · Fredericia, Denmark · <a href="https://unleashconsult.dk">unleashconsult.dk</a><br>
+<a href="../support/">Support</a>
+</footer>
+</div>
+</body>
+</html>
