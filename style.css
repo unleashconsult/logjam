@@ -36,7 +36,7 @@ figure img { display: block; width: 100%; height: auto; border: 1px solid var(--
 figcaption { color: var(--muted); font-size: .85rem; line-height: 1.5; margin-top: .55rem; max-width: 44rem; }
 @media (max-width: 40rem) { figcaption { padding: 0 .15rem; } }
 
-/* Company top bar, shared with unleashconsult.dk so the two sites read as one. */
+/* Company top bar, shared with unleashconsult.io so the two sites read as one. */
 header.site { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--rule); }
 header.site .bar { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; height: 4.5rem; display: flex; align-items: center; justify-content: space-between; }
 header.site .brand { display: flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -.01em; }
