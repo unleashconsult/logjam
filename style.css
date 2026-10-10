@@ -43,7 +43,7 @@ header.site .brand { display: flex; align-items: center; gap: .6rem; color: var(
 header.site .brand svg { width: 2rem; height: 2rem; }
 header.site nav a { color: var(--muted); text-decoration: none; margin-left: 1.5rem; font-size: .95rem; }
 header.site nav a:hover { color: var(--ink); }
-@media (max-width: 36rem) { header.site nav { display: none; } }
+@media (max-width: 36rem) { header.site .brand-name { display: none; } header.site nav a { margin-left: 1.1rem; font-size: .9rem; } }
 /* Company footer, shared with unleashconsult.io: same width as the top bar. */
 footer.site { border-top: 1px solid var(--rule); margin-top: 3.5rem; padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .875rem; }
 footer.site .bar { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; }
