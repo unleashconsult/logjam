@@ -19,7 +19,7 @@ def rrect(x, y, w, h, r):
         return (px - qx) ** 2 + (py - qy) ** 2 <= r * r
     return inside
 
-INK   = (0x1F, 0x2A, 0x37)
+INK   = (0x17, 0x2B, 0x4D)
 LIGHT = (0xE8, 0xED, 0xF3)
 AMBER = (0xF5, 0xA6, 0x23)
 
@@ -66,5 +66,5 @@ png = (b"\x89PNG\r\n\x1a\n"
        + chunk(b"IHDR", struct.pack(">IIBBBBB", S, S, 8, 6, 0, 0, 0))
        + chunk(b"IDAT", zlib.compress(bytes(raw), 9))
        + chunk(b"IEND", b""))
-open(f"/private/tmp/claude-501/-Users-frans-statuspilot/75e15a66-1241-45db-b73b-7ff13da204a8/scratchpad/logo/logo-144.png", "wb").write(png)
+open(__import__("os").path.join(__import__("os").path.dirname(__file__), "logo-144.png"), "wb").write(png)
 print("skrevet", len(png), "bytes")
